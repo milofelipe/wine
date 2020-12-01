@@ -1,4 +1,4 @@
-package com.milofelipe.wine.search;
+package com.milofelipe.wine.search.controller;
 
 import com.milofelipe.wine.common.domain.Wine;
 import com.milofelipe.wine.search.exception.WineNotFoundException;
@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,6 +33,7 @@ public class WineController {
             @ApiResponse(responseCode = "200", description = "Successful operation",
                     content = @Content(schema = @Schema(implementation = WineResponse.class)))
     })
+    @CrossOrigin
     @GetMapping("/api/wines")
     public List<WineResponse> list(@RequestParam(required = false) String lotCodeOrDescription) {
         List<Wine> wines = null;
@@ -49,6 +51,7 @@ public class WineController {
             @ApiResponse(responseCode = "200", description = "successful operation",
                     content = @Content(schema = @Schema(implementation = WineResponse.class))),
             @ApiResponse(responseCode = "404", description = "Could not find Lot Code")})
+    @CrossOrigin
     @GetMapping("/api/wines/{lotCode}")
     public WineResponse view(@PathVariable String lotCode) {
         Wine wine = wineService.getByLotCode(lotCode).orElseThrow(() -> new WineNotFoundException(lotCode));

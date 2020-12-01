@@ -67,7 +67,7 @@ public class BreakdownService {
             case "region":
                 return grapePercentage.getGrape().getRegion().getName();
             case "year-variety":
-                return String.format("%s-%s", grapePercentage.getGrape().getYear(),
+                return String.format("%s - %s", grapePercentage.getGrape().getYear(),
                         grapePercentage.getGrape().getVariety().getName());
             default: // defaults to "year"
                 return String.valueOf(grapePercentage.getGrape().getYear());

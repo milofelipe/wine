@@ -1,4 +1,4 @@
-package com.milofelipe.wine.search;
+package com.milofelipe.wine.search.controller;
 
 import com.milofelipe.wine.common.domain.Wine;
 import lombok.Getter;

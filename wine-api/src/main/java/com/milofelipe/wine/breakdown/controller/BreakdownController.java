@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,7 @@ public class BreakdownController {
             @ApiResponse(responseCode = "200", description = "Successful operation",
             content = @Content(schema = @Schema(implementation = BreakdownResponse.class)))
     })
+    @CrossOrigin
     @GetMapping("/year/{lotCode}")
     public BreakdownResponse byYear(@PathVariable String lotCode) {
         Map<String, Double> breakdownPercentage = breakdownService.byYear(lotCode);
@@ -41,6 +43,7 @@ public class BreakdownController {
             @ApiResponse(responseCode = "200", description = "Successful operation",
                     content = @Content(schema = @Schema(implementation = BreakdownResponse.class)))
     })
+    @CrossOrigin
     @GetMapping("/variety/{lotCode}")
     public BreakdownResponse byVariety(@PathVariable String lotCode) {
         Map<String, Double> breakdownPercentage = breakdownService.byVariety(lotCode);
@@ -52,6 +55,7 @@ public class BreakdownController {
             @ApiResponse(responseCode = "200", description = "Successful operation",
                     content = @Content(schema = @Schema(implementation = BreakdownResponse.class)))
     })
+    @CrossOrigin
     @GetMapping("/region/{lotCode}")
     public BreakdownResponse byRegion(@PathVariable String lotCode) {
         Map<String, Double> breakdownPercentage = breakdownService.byRegion(lotCode);
@@ -63,6 +67,7 @@ public class BreakdownController {
             @ApiResponse(responseCode = "200", description = "Successful operation",
                     content = @Content(schema = @Schema(implementation = BreakdownResponse.class)))
     })
+    @CrossOrigin
     @GetMapping("/year-variety/{lotCode}")
     public BreakdownResponse byYearVariety(@PathVariable String lotCode) {
         Map<String, Double> breakdownPercentage = breakdownService.byYearVariety(lotCode);
