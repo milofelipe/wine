@@ -1,23 +1,35 @@
-# Wine API
+# Wine Search Sample App
 
-### Uses
+Steps to run the app locally:
 
-* Java 8
-* Maven
+1. Start the Wine API Spring Boot App (/wine-api/README.md). Open a terminal:
 
-### Build
+    `$ cd wine-api`
+    
+    `$ ./mvnw spring-boot:run`
+    
+    Then access Swagger UI to test available REST APIs:
+    
+    [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+    
+    ```
+   Mock database only contains three lot codes:
+    - 11YVCHAR001
+    - 11YVCHAR002
+    - 15MPPN002-VK
+   ```
 
-`$ ./mvnw package `
+2. Start the Wine API React App (/wine-client/README.md). Open a new terminal:
 
-### Run Locally
-
-`$ ./mvnw spring-boot:run`
-
-Then access Swagger UI to test available REST APIs:
-
-[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
-
-Mock database only contains three lot codes:
-* 11YVCHAR001
-* 11YVCHAR002
-* 15MPPN002-VK
+    `$ cd wine-client`
+    
+    `$ npm start`
+    
+    Then access the app at [http://localhost:3000](http://localhost:3000)
+    
+   ```
+   Mock database only contains three lot codes:
+    - 11YVCHAR001
+    - 11YVCHAR002
+    - 15MPPN002-VK
+   ```
