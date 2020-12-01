@@ -1,0 +1,145 @@
+.product-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin-top: 150px;
+}
+
+.product-view-header {
+    width: 800px;
+    text-align: left;
+}
+
+.product-view-header-text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 45px;
+
+    color: #0F1010;;
+
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+}
+
+.product-view-header-text-img {
+    padding-right: 10px;
+}
+
+.product-view-header-description {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 21px;
+    line-height: 32px;
+
+    text-transform: capitalize;
+
+    color: #242525;
+}
+
+.product-view-header-edit {
+    float: right;
+}
+
+.product-view-summary {
+    padding-top: 10px;
+}
+
+.product-view-summary-table {
+    width: 800px;
+}
+
+.product-view-summary-row {
+
+}
+
+.product-view-summary-label {
+    padding: 5px 0px 0px 10px;
+    text-align: left;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #242525;
+}
+
+.product-view-summary-value {
+    padding: 5px 10px 0px 0px;
+    text-align: right;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #242525;
+}
+
+.product-view-tabs {
+    padding-top: 20px;
+    width: 800px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.product-view-tab {
+    background: #F5F5F5;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    border: none;
+    color: #3A3B3B;
+    padding: 10px 20px;
+}
+
+.product-view-tab-active {
+    border-bottom: 2px solid #00ADA8;
+}
+
+.product-view-breakdown {
+    border: 1px solid #E8E8E8;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+
+    color: #242525;
+}
+
+.product-view-breakdown-table {
+    width: 800px;
+    border-collapse: collapse;
+}
+
+.product-view-breakdown-table-row {
+    border: 1px solid #E8E8E8;
+    background: #FFFFFF;
+}
+
+.product-view-breakdown-table-key {
+    text-align: left;
+    padding: 10px;
+}
+
+.product-view-breakdown-table-percentage {
+    text-align: right;
+    padding: 10px;
+}
+
+.product-view-breakdown-table-showmore {
+    text-align: center;
+    padding: 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 16px;
+
+    color: #00928D;
+}
