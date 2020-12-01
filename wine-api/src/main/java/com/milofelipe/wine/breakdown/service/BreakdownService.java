@@ -1,14 +1,12 @@
 package com.milofelipe.wine.breakdown.service;
 
 import com.milofelipe.wine.common.domain.GrapePercentage;
-import com.milofelipe.wine.common.domain.Wine;
 import com.milofelipe.wine.common.service.WineRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Returns a wine's breakdown of the TOTAL percentage of year, variety, region, and year+variety
@@ -41,15 +39,12 @@ public class BreakdownService {
     private Map<String, Double> processBreakdown(String lotCode, String breakdownType) {
         validate(lotCode);
         Map<String, Double> breakdown = new HashMap<>();
-        wineRepository.searchByLotCode(lotCode).ifPresent(new Consumer<Wine>() {
-            @Override
-            public void accept(Wine wine) {
-                for (GrapePercentage grapePercentage : wine.getComponents()) {
-                    String key = getKey(grapePercentage, breakdownType);
-                    double percentage = grapePercentage.getPercentage();
-                    double totalPercentage = breakdown.containsKey(key) ? breakdown.get(key) : 0;
-                    breakdown.put(key, totalPercentage + percentage);
-                }
+        wineRepository.searchByLotCode(lotCode).ifPresent(wine -> {
+            for (GrapePercentage grapePercentage : wine.getComponents()) {
+                String key = getKey(grapePercentage, breakdownType);
+                double percentage = grapePercentage.getPercentage();
+                double totalPercentage = breakdown.containsKey(key) ? breakdown.get(key) : 0;
+                breakdown.put(key, totalPercentage + percentage);
             }
         });
 
