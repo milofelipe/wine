@@ -4,10 +4,6 @@ import wineglass from './wineglass.png'
 import Configuration from "../Configuration";
 
 class SearchResults extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="search-results">
